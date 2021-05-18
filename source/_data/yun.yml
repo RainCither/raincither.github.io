@@ -14,8 +14,8 @@ avatar:
   mickey_mouse: false
   status:
     enable: false
-    emoji: 😭
-    message: 不想上学
+    emoji: 😊
+    message: 永远相信美好的事情即将发生
 
 # cdn:
   # pre: https://cdn.jsdelivr.net/gh/RainCither/raincither.github.io@latest
@@ -37,15 +37,6 @@ banner:
   go_down:
     enable: true
     icon: icon-arrow-down-s-line
-
-# 背景颜色
-colors:
-  primary: "#0078e7"
-  # bg: "#F5F5F5"
-  selection_bg: "#8e71c1" # 选取文字时的背景色
-  # 标签云中标签的起始色和结束色
-  # tag_start_color:
-  # tag_end_color:
 
 # 背景图片
 bg_image:
@@ -147,7 +138,8 @@ lazyload:
   enable: true
 
 pjax:
-  enable: true
+  enable: false
+  src: /js/pjax.js
 
 # 页面编辑
 post_edit:
@@ -233,7 +225,7 @@ footer:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi:
-  enable: false
+  enable: true
   site_uv: true
   site_uv_icon: icon-user-line
   site_pv: true
@@ -255,7 +247,7 @@ github_issues:
 
 # 讨论区
 github_discussions:
-  enable: true
+  enable: false
 
 disqusjs:
   enable: false
@@ -274,32 +266,3 @@ google_analytics:
 google_adsense:
   enable: false
   client: ca-pub-2245427233262012
-
-
-# plugins
-aplayer:
-  global: true
-  meting: true
-  # https://github.com/metowolf/MetingJS/tree/v1.2#option
-  widget:
-    enable: true
-    autoplay: false
-    # theme: "#2980b9"
-    loop: all
-    order: list
-    preload: auto
-    volume: 0.7
-    mutex: true
-    lrcType: 0
-    listFolded: false
-    listMaxHeight: 340px
-    #audio:
-     # - name: 星宿计时
-       # artist: 杉田朗/洛天依
-       # url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/audio/star-timer.mp3
-       # cover: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0.jpg
-    meting:
-      enable: true
-      id: 3238988993
-      server: netease
-      type: playlist
