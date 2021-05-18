@@ -1,0 +1,50 @@
+---
+title: cmatrix
+date: 2020-04-20 16:53:13
+hide: true
+permalink: /cmatrix/
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html; charset=UTF-8">
+    <title>cmatrix</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+
+</head>
+<body>
+    <canvas id = c ></canvas>
+    <script>
+
+        c.height = window.screen.height;
+        c.width = window.screen.width;
+        
+        let pen = c.getContext('2d'), ys = Array(parseInt(c.width / 10)).fill(0)
+        let random_char = function() { return String.fromCharCode(parseInt(65 + Math.random() * (90 - 65))) }
+
+        setInterval(function () {
+
+            pen.fillStyle = "rgba(0,0,0,0.05)"
+            pen.fillRect(0, 0, c.width, c.height)
+            pen.fillStyle = "#0f0"
+
+            ys.forEach((y, i) => {
+                pen.fillText(random_char(), i * 10, y)
+                ys[i] = Math.random() < 0.04 ? 0 : y + 10
+            })
+
+        }, 1000 / 20)
+
+    </script>
+</body>
+</html>
