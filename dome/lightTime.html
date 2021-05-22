@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html" charset="utf-8">
+    <title>LightTime</title>
+
+    <style>
+
+        @import url("//fonts.googleapis.com/css?family=Vibur");
+        
+        html, body{
+            height: 100%;
+            font-family: Vibur;
+            font-size: 52px;
+            background-color: #222;
+        }
+
+        body{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div{
+            text-align: center;
+            color: #fee;
+            text-shadow: 0 -40px 100px,
+                         0 0 2px,
+                         0 0 52px #f78fb3,
+                         0 0 26px #f78fb3,
+                         0 0 5px #f78fb3,
+                         0 10px #000;
+        }
+
+        div p{
+
+            letter-spacing: 4px;
+            animation: blink 2s linear infinite;
+
+        }
+
+        @keyframes blink{
+            78%, 81%, 83%, 93%{
+                color: inherit;
+                text-shadow: inherit;
+            }
+            80%, 82%, 92% {
+                color: #333;
+                text-shadow: none;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="time"></p>
+        <p class="date"></p>
+    </div>
+
+    <script>
+
+        setInterval(() => {
+
+            let now = new Date();
+            let year = now.getFullYear();
+            let month = now.getMonth();
+            let day = now.getDate();
+            let hh = now.getHours();
+            let mm = now.getMinutes();
+            let ss = now.getSeconds();
+
+            if(month < 10){
+                month = "0" + month
+            }
+
+            if(day < 10){
+                day = "0" + day
+            }
+
+            if(hh < 10){
+                hh = "0" + hh
+            }
+
+            if(mm < 10){
+                mm = "0" + mm
+            }
+
+            if(ss < 10){
+                ss = "0" + ss
+            }
+
+            let time = hh + ':' + mm + ':' + ss
+
+            let date = year + '年' + month + '月' + day + '日'
+
+            document.querySelector('.time').innerHTML = time;
+            document.querySelector('.date').innerHTML = date;
+
+        }, 1000);
+
+    </script>
+</body>
+</html>
